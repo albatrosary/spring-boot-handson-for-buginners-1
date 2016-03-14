@@ -16,6 +16,6 @@ public class RootController {
     @RequestMapping("/")
     public String get() {
         // return "hello world";
-        return "index"; //resources/template/index.htmlファイルの中身を参照しに行く
+        return "index"; //resources/template/index.html繝輔ぃ繧､繝ｫ縺ｮ荳ｭ霄ｫ繧貞盾辣ｧ縺励↓陦後￥
     }
 }
