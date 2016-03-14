@@ -123,3 +123,48 @@ spring-bootではよく使用するライブラリの組み合わせをデフォ
 http://docs.spring.io/spring-boot/docs/current-SNAPSHOT/reference/htmlsingle/#using-boot-starter-poms
 
 ※もしPCにmysql等がすでにインストールされている場合は、そちらを使用することも出来ます。その場合はh2への依存をdependencyタグごと消してください。
+
+
+## spring-bootの設定ファイルの追加
+
+プロジェクトからspring-boot-handsonを右クリックして、新規→フォルダを選択します。
+
+フォルダ名にresources、親フォルダにsrc\mainを入力し、終了を押します。
+
+![newfolder1](img/newfolder1.png)
+
+以下のようにフォルダが作成されました。
+
+![newfolder2](img/newfolder2.png)
+
+作成したフォルダに以下のファイルを追加します。
+
+
+```yaml:application.yml
+#example of application.yml
+#これは開発用の設定です。
+server.port: 8080
+spring:
+#    datasource:
+#        url: jdbc:mysql://localhost:3306/mysql
+#        username: mysql
+#        password: mysql
+    jpa:
+        show-sql: false
+        hibernate:
+            ddl-auto: create-drop
+        properties:
+            hibernate:
+                format_sql: true
+    thymeleaf:
+        cache: false
+logging:
+    level:
+        org.hibernate.SQL: DEBUG
+        org.hibernate.type: TRACE
+    
+
+```
+
+開発時に必要な最低限の設定を最初から追加しています。
+ #で始まる行はコメントアウトされています。mysqlを使用する場合はコメントアウトを解除してください。
