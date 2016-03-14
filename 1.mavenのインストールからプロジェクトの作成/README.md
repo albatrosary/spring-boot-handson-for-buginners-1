@@ -260,6 +260,13 @@ public class RootController {
 
 ※今後起動させる場合はプロジェクトを右クリックしてカスタム→spring-boot:runを選択してください。
 
+mavenから直接起動させたい場合はフォルダをプロジェクトルートに移動して以下のコマンドを入力します。
+
+```
+mvn spring-boot:run
+```
+
+
 
 起動させたら以下のURLにアクセスしてください。
 
