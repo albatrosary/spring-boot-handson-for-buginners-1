@@ -124,6 +124,13 @@ http://docs.spring.io/spring-boot/docs/current-SNAPSHOT/reference/htmlsingle/#us
 
 ※もしPCにmysql等がすでにインストールされている場合は、そちらを使用することも出来ます。その場合はh2への依存をdependencyタグごと消してください。
 
+## 必要なライブラリの取得
+
+依存するライブラリを取得します。
+今回はmavenを使用しているため、すぐです。
+
+プロジェクトからspring-boot-handsonを右クリックし、ビルドを選択してください。pom.xmlの内容が正しく、ネットワークに接続されていれば、依存ライブラリが勝手にダウンロードされます。
+
 
 ## spring-bootの設定ファイルの追加
 
@@ -137,7 +144,7 @@ http://docs.spring.io/spring-boot/docs/current-SNAPSHOT/reference/htmlsingle/#us
 
 ![newfolder2](img/newfolder2.png)
 
-作成したフォルダに以下のファイルを追加します。
+作成したフォルダにapplication.yamlという名前で以下のファイルを追加します。
 
 
 ```yaml:application.yml
@@ -168,3 +175,98 @@ logging:
 
 開発時に必要な最低限の設定を最初から追加しています。
  #で始まる行はコメントアウトされています。mysqlを使用する場合はコメントアウトを解除してください。
+
+
+## Mainクラスの追加
+
+Spring-bootのアプリケーションは通常のJavaアプリケーションとして動作します。Javaアプリケーションのエントリポイントとなるmainメソッドを持った以下のクラスを作成してください。
+
+megascus.spring.boot.handsonパッケージを右クリックして、新規→Javaクラスから作成できます。
+
+megascus.spring.boot.handson.Main.java
+
+```java:Main.java
+
+package megascus.spring.boot.handson;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.context.web.SpringBootServletInitializer;
+
+@SpringBootApplication
+public class Main extends SpringBootServletInitializer {
+
+    @Override
+    protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+        return application.sources(Main.class);
+    }
+
+    public static void main(String[] args) {
+        SpringApplication.run(Main.class, args);
+    }
+}
+```
+
+@SpringBootApplicationアノテーションはこのクラスのあるパッケージ以下をspring-bootの構成クラスとして扱い、springコンテナ(以下：コンテナと呼びます)で読み込むようにします。
+
+spring-bootではこういったアノテーションを多用します。アノテーションが付いているクラスが出てきた場合、コンテナで読み込まれ、何かしらの処理をされるということだけ覚えておいてください。
+
+ここまでで事前準備が完了しました。
+
+# 最初の画面の作成
+
+ここまで設定した内容が正しいかを確認するためにアクセスした場合に単純にメッセージを返すプログラムを書いてみます。
+
+## RootControllerクラスの追加
+
+以下のクラスを作成してください。
+
+megascus.spring.boot.handson.RootController.java
+
+```java:RootController.java
+
+package megascus.spring.boot.handson;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+/**
+ *
+ * @author megascus
+ */
+@RestController
+public class RootController {
+    
+    @RequestMapping("/")
+    public String get() {
+        return "hello world";
+    }
+}
+
+```
+
+@RequestMapping("/")でウェブアプリケーションの"/"(ルート)にアクセスした場合の定義を行っています。
+
+## 実際に起動してみる
+
+ここで実際に起動してみます。
+
+プロジェクトを右クリックしてカスタム→ゴールを選択します。
+
+ゴールに spring-boot:run、保存にチェックを入れ、spring-boot:runと入力しOKを押すと起動が始まります。
+
+![run](img/run.png)
+
+※今後起動させる場合はプロジェクトを右クリックしてカスタム→spring-boot:runを選択してください。
+
+
+起動させたら以下のURLにアクセスしてください。
+
+http://localhost:8080/
+
+無事に起動しているとhello worldと表示されるはずです。
+
+表示されているのを確認したら、NetBeansの下のほうに表示されている出力画面から赤い四角のボタンを押してアプリケーションを終了させます。
+
+これで、最初のアプリケーションの作成が完了しました。
