@@ -54,11 +54,11 @@ http://ftp.kddilabs.jp/infosystems/apache/maven/maven-3/3.3.9/binaries/apache-ma
 
 コマンドプロンプトを開いて、mvn というコマンドを実行してみて、コマンドが見つかればインストール完了です。
 
-# NetBeansでの新規プロジェクトの作成
+## NetBeansでの新規プロジェクトの作成
 
 ここからNetBeansで作業をしていきます。NetBeansを立ち上げてない場合は立ち上げてください。
 
-## 新規プロジェクトの作成
+### 新規プロジェクトの作成
 
 + 左上のファイル→新規プロジェクト(w)を選択します。
 + 新規プロジェクトからMaven→Javaアプリケーションを選択して、次へを押します。
@@ -67,7 +67,7 @@ http://ftp.kddilabs.jp/infosystems/apache/maven/maven-3/3.3.9/binaries/apache-ma
 ![newproject1](img/newproject1.png)
 ![newproject2](img/newproject2.png)
 
-## pom.xml(mavenの設定ファイル)の編集
+### pom.xml(mavenの設定ファイル)の編集
 
 pom.xmlはmavenの設定ファイルです。pom.xmlに今回のハンズオンで使用するライブラリを追加していきます。
 pom.xmlを以下のように書き直してください。
@@ -124,7 +124,7 @@ http://docs.spring.io/spring-boot/docs/current-SNAPSHOT/reference/htmlsingle/#us
 
 ※もしPCにmysql等がすでにインストールされている場合は、そちらを使用することも出来ます。その場合はh2への依存をdependencyタグごと消してください。
 
-## 必要なライブラリの取得
+### 必要なライブラリの取得
 
 依存するライブラリを取得します。
 今回はmavenを使用しているため、すぐです。
@@ -132,7 +132,7 @@ http://docs.spring.io/spring-boot/docs/current-SNAPSHOT/reference/htmlsingle/#us
 プロジェクトからspring-boot-handsonを右クリックし、ビルドを選択してください。pom.xmlの内容が正しく、ネットワークに接続されていれば、依存ライブラリが勝手にダウンロードされます。
 
 
-## spring-bootの設定ファイルの追加
+### spring-bootの設定ファイルの追加
 
 プロジェクトからspring-boot-handsonを右クリックして、新規→フォルダを選択します。
 
@@ -177,7 +177,7 @@ logging:
  #で始まる行はコメントアウトされています。mysqlを使用する場合はコメントアウトを解除してください。
 
 
-## Mainクラスの追加
+### Mainクラスの追加
 
 Spring-bootのアプリケーションは通常のJavaアプリケーションとして動作します。Javaアプリケーションのエントリポイントとなるmainメソッドを持った以下のクラスを作成してください。
 
@@ -214,11 +214,11 @@ spring-bootではこういったアノテーションを多用します。アノ
 
 ここまでで事前準備が完了しました。
 
-# 最初の画面の作成
+## 最初の画面の作成
 
 ここまで設定した内容が正しいかを確認するためにアクセスした場合に単純にメッセージを返すプログラムを書いてみます。
 
-## RootControllerクラスの追加
+### RootControllerクラスの追加
 
 以下のクラスを作成してください。
 
