@@ -2,7 +2,6 @@ package megascus.spring.boot.handson.controller;
 
 import megascus.spring.boot.handson.model.BookService;
 import megascus.spring.boot.handson.model.Book;
-import megascus.spring.boot.handson.model.BookJDBCCompornent;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestParam;
  * @author megascus
  */
 @Controller
-@RequestMapping("books")
+@RequestMapping("books")  // booksというURLにマッピングしている
 public class BookController {
 
     @Autowired
