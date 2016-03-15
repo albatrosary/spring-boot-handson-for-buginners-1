@@ -23,13 +23,17 @@ Spring Bootを使えば手軽にサクサクとアプリケーション開発を
 
 #事前準備
 事前準備としてJDK 8のインストールをお願いします。
+
 http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
+
 ※自分の環境を選択してダウンロードしてください。
 
 また、今回は開発環境としてNetBeans 8.1を使用します。
 インストールが済んでない方はインストールをお願いします。
 以下のページよりJava EEを選択してダウンロードしてください。
+
 https://netbeans.org/downloads/?pagelang=ja
+
 (Tomcat/GlassFishのインストールダイアログが途中でますが、そちらはインストールしなくてもかまいません)
 
 #アジェンダ
