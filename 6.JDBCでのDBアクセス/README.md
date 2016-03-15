@@ -37,7 +37,6 @@ public class BookJDBCCompornent {
             book.setSummary(rs.getString("summary"));
             return book;
         });
-
     }
 }
 ```
@@ -142,13 +141,16 @@ http://localhost:8080/books
 
 これで、JDBCでのDBアクセスが完了しました。
 
+
+
+
 ## (参考) JPAで同じことをやる場合
 
-JPAでSQLのように検索を行いたい場合はJPQL(Java Persistence query language)を使用するのが一般的です。
+JPAでSQLを使用した例のように検索を行いたい場合はJPQL(Java Persistence Query Language)を使用するのが一般的です。
 
 JPQLはSQLに良く似た構文ですが、実際には違うものです。SQLはテーブルに対してクエリを発行しますが、JPQLはエンティティに対してクエリを発行します。
 
-以下のようにに書き直してください。
+以下のように書き直してください。
 
 package megascus.spring.boot.handson.model.BookRepository.java
 
