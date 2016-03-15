@@ -41,6 +41,9 @@ public class RootController {
 
 ```
 
+@Controllerアノテーションは画面アクセスのルートを定義するために使用するクラスにつけるアノテーションです。
+用語についてはいわゆるMVCに則ってつけられています。
+
 ### HTMLテンプレートファイルの追加
 
 プロジェクトからその他のソース→src/main/resourcesを選択し、その下にtemplatesフォルダを作成します。※NetBeans上はJavaのパッケージのように見えます。
