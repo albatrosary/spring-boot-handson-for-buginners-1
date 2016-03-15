@@ -31,7 +31,7 @@
             <artifactId>h2</artifactId>
         </dependency>
     </dependencies>
-    
+    <!-- ここから追加 -->
     <build>
         <plugins>
             <plugin>
@@ -40,4 +40,5 @@
             </plugin>
         </plugins>
     </build>
+    <!-- ここまで追加 -->
 </project>

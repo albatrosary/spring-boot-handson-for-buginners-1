@@ -15,6 +15,12 @@ public class BookService {
 
     @Autowired //Springで管理されているコンポーネントからBookRepositoryであるクラスを取ってくる
     BookRepository repository;
+    
+    //ここから追加
+    public List<Book> searchByTitle(String title) {
+        return repository.searchByTitle(title);
+    }
+    //ここまで追加
 
     public List<Book> findAll() {
         return repository.findAll();

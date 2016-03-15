@@ -12,8 +12,9 @@ import org.springframework.stereotype.Repository;
  */
 @Repository //Springにコンポーネントとして管理されるDBにアクセスするためのクラス 
 public interface BookRepository extends JpaRepository<Book, Long> {
-    
+    //ここから追加
     // BookJDBCCompornentのSQLをJPQLで書き直した例。
     @Query("select b from Book b where b.title like %:title%")
     List<Book> searchByTitle(String title);
+    //ここまで追加
 }

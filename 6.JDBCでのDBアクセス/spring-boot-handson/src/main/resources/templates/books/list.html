@@ -12,12 +12,14 @@
         <div layout:fragment="content" class="col-sm-12">
             <!-- 文字列を使用する場合は@～という記法を使用する -->
             <a th:href="@{/books/create}" href="/books/create.html">新規登録</a>
+            <!-- ここから追加 -->
             <form th:action="@{/books}" method="get">
                 <div class="form-group">
                     <input class="form-control" type="text" name="title" />
                     <input class="btn btn-default" type="submit" name="form" value="検索"/>
                 </div>
             </form>
+            <!-- ここまで追加 -->
             <table class="table table-striped table-bordered table-condensed">
                 <tr>
                     <th>ID</th>

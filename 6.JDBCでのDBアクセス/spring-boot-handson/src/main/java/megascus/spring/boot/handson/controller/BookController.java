@@ -21,11 +21,19 @@ import org.springframework.web.bind.annotation.RequestParam;
 @RequestMapping("books")
 public class BookController {
 
-    @Autowired
-    BookService service;
-    
+    // ここから追加
     @Autowired
     BookJDBCCompornent bookjdbc;
+
+    @RequestMapping(method = RequestMethod.GET, params = "title")
+    String search(Model model, @RequestParam String title) {
+        model.addAttribute("books", bookjdbc.searchByTitle(title));
+        return "books/list";
+    }
+    // ここまで追加
+
+    @Autowired
+    BookService service;
 
     @ModelAttribute(value = "book") // 画面に表示したい初期データ bookという名前でthymeleafと共有する
     Book setUpForm() {
@@ -35,12 +43,6 @@ public class BookController {
     @RequestMapping(method = RequestMethod.GET)
     String list(Model model) {
         model.addAttribute("books", service.findAll()); // booksという名前で一覧のデータをthymeleafと共有する
-        return "books/list";
-    }
-    
-    @RequestMapping(method = RequestMethod.GET, params = "title")
-    String search(Model model, @RequestParam String title) {
-        model.addAttribute("books", bookjdbc.searchByTitle(title));
         return "books/list";
     }
 
@@ -81,8 +83,8 @@ public class BookController {
         service.delete(id);
         return "redirect:/books";
     }
-    
-    @RequestMapping(value = {"update", "create" },params = "goToTop", method = RequestMethod.POST)
+
+    @RequestMapping(value = {"update", "create"}, params = "goToTop", method = RequestMethod.POST)
     String gotoTop() {
         return "redirect:/books";
     }
