@@ -50,6 +50,8 @@ public class RootController {
 
 その下に以下のファイルを作成します。
 
+index.html
+
 ```html:index.html
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
