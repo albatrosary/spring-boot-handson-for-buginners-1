@@ -45,8 +45,8 @@ http://ftp.kddilabs.jp/infosystems/apache/maven/maven-3/3.3.9/binaries/apache-ma
 システムからユーザー環境変数に以下の環境変数を追加します。
 
 + JAVA_HOME = すでにインストールしているjavaの場所 (ex. C:\Program Files\Java\jdk1.8.0_73)
-+ M2_HOME = C:\apps\apache-maven-3.3.9-bin
-+ PATH = %M2_HOME$\bin;%JAVA_HOME%\bin
++ M2_HOME = C:\apps\apache-maven-3.3.9 ※mavenの解凍先を指定してください。
++ PATH = %M2_HOME%\bin;%JAVA_HOME%\bin
 
 ※すでにPATHが設定されている場合は上書きせずに追記するようにしてください。
 
