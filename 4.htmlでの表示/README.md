@@ -103,8 +103,8 @@ public class BookController {
 
 src/main/resourcesの下のtemplateの下にbooksというフォルダを作成します。作成に成功した場合NetBeans上ではJavaのパッケージ(templates.books)のように見えます。
 
-![bookfolder1](img/book3folder1.png)
-![bookfolder2](img/book3folder2.png)
+![bookfolder1](img/booksfolder1.png)
+![bookfolder2](img/booksfolder2.png)
 
 
 ## list.html(一覧画面)の作成
