@@ -144,7 +144,7 @@ http://docs.spring.io/spring-boot/docs/current-SNAPSHOT/reference/htmlsingle/#us
 
 ![newfolder2](img/newfolder2.png)
 
-作成したフォルダにapplication.yamlという名前で以下のファイルを追加します。
+作成したフォルダにapplication.ymlという名前で以下のファイルを追加します。
 
 
 ```yaml:application.yml
