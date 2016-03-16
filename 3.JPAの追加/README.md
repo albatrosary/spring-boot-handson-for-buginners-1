@@ -178,6 +178,8 @@ Repositoryはただのインターフェースです。実装はコンテナに�
 
 Repositoryを使用するクラスとして以下のクラスを作成してください。
 
+megascus.spring.boot.handson.model.BookService.java
+
 ```java:BookService.java
 
 package megascus.spring.boot.handson.model;
